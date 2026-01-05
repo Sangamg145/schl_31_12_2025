@@ -4,7 +4,7 @@ const {
   registerUser,
   getDashboardStats,
 } = require("../controllers/auth");
-const { addStudent, getStudents, updateStudent } = require("../controllers/stu");
+const { addStudent, getStudents, updateStudent, getStudentById } = require("../controllers/stu");
 const { addCourse, getCourses, } = require("../controllers/course");
 const {
   getTransactionHistory,
@@ -20,6 +20,7 @@ router.post("/login", loginUser);
 router.get("/dashboard", getDashboardStats);
 router.post("/addStudent", addStudent);
 router.get("/students", getStudents);
+router.get("/:id", getStudentById);
 // POST Add Course
 router.post("/addCourse", addCourse);
 

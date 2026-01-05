@@ -4,8 +4,8 @@ const studentSchema = new mongoose.Schema(
   {
     admissionNo: {
       type: String,
-      required: true,
-      unique: true,
+      // required: true,
+      // unique: true,
     },
 
     firstName: {
@@ -43,11 +43,11 @@ const studentSchema = new mongoose.Schema(
 
     courseId: {
       type: String,
-      required: true,
+      // required: true,
     },
 
-    course: {
-      type: Object, // frontend mockCourses object
+    courseName: {
+      type: String,
       required: true,
     },
 
@@ -59,7 +59,7 @@ const studentSchema = new mongoose.Schema(
 
     admissionDate: {
       type: Date,
-      required: true,
+      // required: true,
     },
   },
   { timestamps: true } // creates createdAt & updatedAt
