@@ -1,7 +1,6 @@
 const User = require("./../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { mockUsers } = require("../models/abcd");
 
 const loginUser = async (req, res) => {
   try {
