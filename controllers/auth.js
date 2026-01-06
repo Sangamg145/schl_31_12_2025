@@ -1,6 +1,7 @@
 const User = require("./../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { mockUsers } = require("../models/abcd");
 
 const loginUser = async (req, res) => {
   try {
@@ -201,4 +202,16 @@ const getDashboardStats = async (req, res) => {
 };
 
 
-module.exports = { loginUser, registerUser, getDashboardStats };
+const getUserList = async (req, res) => {
+  try {
+    const users = await User.find({}, '-password'); // Exclude password field
+    res.status(200).json({
+      success: true,
+      data: users,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+module.exports = { loginUser, registerUser, getDashboardStats, getUserList };
